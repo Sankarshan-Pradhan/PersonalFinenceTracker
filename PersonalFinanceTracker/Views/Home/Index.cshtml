@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Expense>
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<header>
+    <h1>Personal Finance Tracker</h1>
+</header>
+<nav aria-label="Main navigation">
+    <ul>
+        <li><a href="/Expense/Create">Add Expense</a></li>
+        <li><a href="/Income/Create">Add Income</a></li>
+        <li><a href="/Budget/Create">Set Budget</a></li>
+        <li><a href="/History/Index">View History</a></li>
+    </ul>
+</nav>
+
+<section id="dashboard-content">
+    <h2>Budget Overview</h2>
+    <div id="content">
+        <!-- Dynamic content loaded via JS -->
+    </div>
+</section>
+<script src="~/js/dashboard.js"></script>

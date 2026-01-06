@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PersonalFinanceTracker.Models.Expense>
+
+@{
+    ViewData["Title"] = "My Expenses";
+}
+
+<h2>My Expenses</h2>
+
+<a asp-action="Create">➕ Add New Expense</a>
+
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var expense in Model)
+        {
+            <tr>
+                <td>@expense.Amount</td>
+                <td>@expense.Category</td>
+                <td>@expense.Description</td>
+                <td>@expense.Date.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Home/Index">Back to Dashboard</a>

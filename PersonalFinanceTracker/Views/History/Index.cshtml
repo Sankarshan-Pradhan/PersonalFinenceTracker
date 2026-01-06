@@ -1,0 +1,73 @@
+﻿@model Tuple<
+List<PersonalFinanceTracker.Models.Expense>,
+    List<PersonalFinanceTracker.Models.Income>,
+    List < PersonalFinanceTracker.Models.Budget >
+>
+
+
+@{
+    ViewData["Title"] = "Transaction History";
+}
+
+<h2>Transaction History</h2>
+
+<hr />
+
+<h3>Expenses</h3>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Description</th>
+    </tr>
+    @foreach (var e in Model.Item1)
+    {
+        <tr>
+            <td>@e.Date.ToShortDateString()</td>
+            <td>@e.Category</td>
+            <td>@e.Amount</td>
+            <td>@e.Description</td>
+        </tr>
+    }
+</table>
+
+<hr />
+
+<h3>Income</h3>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Date</th>
+        <th>Source</th>
+        <th>Amount</th>
+        <th>Description</th>
+    </tr>
+    @foreach (var i in Model.Item2)
+    {
+        <tr>
+            <td>@i.Date.ToShortDateString()</td>
+            <td>@i.Source</td>
+            <td>@i.Amount</td>
+            <td>@i.Frequency</td>
+        </tr>
+    }
+</table>
+
+<hr />
+
+<h3>Budgets</h3>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Category</th>
+        <th>Limit</th>
+        <th>Period</th>
+    </tr>
+    @foreach (var b in Model.Item3)
+    {
+        <tr>
+            <td>@b.Category</td>
+            <td>@b.MonthlyLimit</td>
+        </tr>
+    }
+</table>
+<a href="/Home/Index">⬅ Back to Dashboard</a>

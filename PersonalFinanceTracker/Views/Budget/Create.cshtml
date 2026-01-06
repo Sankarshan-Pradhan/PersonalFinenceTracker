@@ -1,0 +1,34 @@
+﻿@model PersonalFinanceTracker.Models.Budget
+
+@{
+    ViewData["Title"] = "Set Budget";
+}
+
+<h2>Set Budget</h2>
+
+<form asp-controller="Budget" asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <div>
+        <label asp-for="Category"></label>
+        <input asp-for="Category" required />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Month"></label>
+        <input asp-for="Month" type="month" />
+        <span asp-validation-for="Month"></span>
+    </div>
+
+    <div>
+        <label asp-for="MonthlyLimit"></label>
+        <input asp-for="MonthlyLimit" type="number" step="0.01" required />
+        <span asp-validation-for="MonthlyLimit" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit">Set Budget</button>
+</form>
+
+<a asp-action="Index">Go to Budget List</a>
