@@ -49,14 +49,12 @@ PersonalFinanceTracker/
 └── Program.cs # Application configuration
 
 
----
-
 ## ⚙️ Setup Instructions
 
 ### Prerequisites
-- .NET SDK (6.0 or later)
-- SQL Server
-- Visual Studio / VS Code
+ .NET SDK (6.0 or later)
+ SQL Server
+ Visual Studio / VS Code
 
 ### Steps to Run the Project
 1. Clone the repository:
